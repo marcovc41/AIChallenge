@@ -64,7 +64,8 @@ class EarthData:
                 np_matrix = numpy.array(matrix)
                 rows = np_matrix.shape[0]
                 columns = np_matrix.shape[1]
-                dataset_inputs.append(date)
+                year = int(date.split("-")[0])
+                dataset_inputs.append([year])
                 dataset_outputs.append(np_matrix.flatten())
 
         return dataset_inputs, dataset_outputs, rows, columns
