@@ -3,12 +3,12 @@ import numpy
 from matplotlib import pyplot as plot
 
 
-def plot_map(data, rows, columns):
+def plot_map(data, rows, columns, title):
     if data is not None and rows > 0 and columns > 0 and rows is not None and columns is not None:
-        matrix = data.reshape(rows, columns)
-        plot.imshow(matrix, interpolation='nearest')
-        plot.show
-
+    matrix = data.reshape(rows, columns)
+    fig, ax = plot.subplots(ncols=1, figsize=(10, 5))
+    ax.matshow(matrix)
+    ax.set_title(title)
 
 class EarthData:
     def __init__(self):
