@@ -4,9 +4,10 @@ from matplotlib import pyplot as plot
 
 
 def plot_map(data, rows, columns):
-    matrix = data.reshape(rows, columns)
-    plot.imshow(matrix, interpolation='nearest')
-    plot.show
+    if data is not None and rows > 0 and columns > 0 and rows is not None and columns is not None:
+        matrix = data.reshape(rows, columns)
+        plot.imshow(matrix, interpolation='nearest')
+        plot.show
 
 
 class EarthData:
@@ -67,5 +68,6 @@ class EarthData:
                 year = int(date.split("-")[0])
                 dataset_inputs.append([year])
                 dataset_outputs.append(np_matrix.flatten())
+            return dataset_inputs, dataset_outputs, rows, columns
 
-        return dataset_inputs, dataset_outputs, rows, columns
+        return None, None, None, None
