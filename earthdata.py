@@ -22,7 +22,7 @@ class EarthData:
         """
         Select specific Google Earth Engine dataset filtered by band, dates and sorted in time.
 
-        :param dataset_name: Name of Google Earth Dataset
+        :param dataset_name: Google Earth Dataset
         :param start_date: To filter dataset by start date (inclusive)
         :param end_date: To filter dataset by end date (exclusive)
         :param band: Band of image collection
@@ -43,7 +43,7 @@ class EarthData:
         :param lon: Longitude location of crop region center
         :param dx: Rectangle length for cropping dataset
         :param dy: Rectangle width for cropping dataset
-        :return: list of dates and list of flatten matrices
+        :return: (list of dates, list of flatten matrices,
         """
 
         default_scale = 100  # default map scale to use
